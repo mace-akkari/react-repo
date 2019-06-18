@@ -1,0 +1,16 @@
+.repo-list {
+    list-style: none;
+    padding: 0;
+}
+
+.repoBorder{
+    border: 3px #C8C8C8 solid;
+    margin: 5px;
+    width: 60%;
+    display: inline-block;
+    font-weight: bold;   
+}
+
+p {
+    margin: 8px;
+}
