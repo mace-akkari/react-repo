@@ -1,26 +1,58 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import RepoList from './RepoList';
+import { getRepos } from './repolibrary';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      loaded: false,
+      repos: [],
+      error: false
+
+    };
+    this.fetchRepos = this.fetchRepos.bind(this);
+  }
+
+  async fetchRepos(gitUser) {
+    this.setState({
+      loaded: false
+    });
+    const repos = await getRepos(gitUser, this.props.repoList);
+    this.setState({
+      loaded: true,
+      gitUser,
+      repos
+    });
+  }
+
+  async componentDidMount() {
+    const { gitUser } = this.state;
+    const repos = await getRepos(gitUser, this.props.repoList);
+    this.setState({
+      loaded: true,
+      repos
+    });
+  }
+
+  componentDidCatch() {
+    console.log('error')
+    this.setState({ error: true });
+  }
+
+  render() {
+    const { gitUser, loaded, repos, error } = this.state;
+    return (
+      <div className="App">
+        <h1>GitHub Repo</h1>
+        <h2>{`You have chosen to view`}</h2> <span>{`${gitUser}'s repository:`}</span>
+        {error ? <h2>ERROR HAS OCCURED</h2> : ""}
+        {loaded && !error ? <RepoList repos={repos} /> : "Loading"}
+      </div>
+    );
+  }
 }
+
 
 export default App;
