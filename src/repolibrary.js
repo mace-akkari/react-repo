@@ -6,7 +6,7 @@ async function getReposFor(gitUser) {
   }
   try {
     const data = await response.json();
-    const repo = data;
+    const repo = data.data;
     return repo;
 
   } catch (e) {
@@ -14,9 +14,12 @@ async function getReposFor(gitUser) {
   }
 }
 
-function getReopsFrom(repoList) {
-  const gitUsers = repoList
-  return gitUsers.map((gitUser) => ({gitUser}));
+function getReopsFrom(repo, gitUser, repoList) {
+  const gits = repoList
+  return gits.map((gitUser) => ({
+    gitUser,
+    value: repo[gitUser]
+  }));
 }
 
 
