@@ -2,15 +2,16 @@ import React from 'react';
 import './RepoList.css';
 
 const getRepo = (repo) => (
-    <li className="repoBorder" key={repo.name}>
-        <p>{repo.name}</p>
-        <p>{repo.owner.avatar_url}</p>
-        <p>{repo.description}</p>
-        <p>{repo.created_at}</p>
-        <p>{repo.updated_at}</p>
-        <p>{repo.forks}</p>
+    <ul className="repoBorder" key={repo.name}>
+        <li>{repo.name}</li>
+        <li>{repo.owner.avatar_url}</li>
+        <li>{repo.language}</li>
+        <li>{repo.description}</li>
+        <li>{repo.created_at}</li>
+        <li>{repo.updated_at}</li>
+        <li>{repo.forks}</li>
         
-    </li>
+    </ul>
 ); 
 
 const getList = (repos) => {
