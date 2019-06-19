@@ -5,11 +5,11 @@ const getRepo = (repo) => (
     <ul className="repoBorder" key={repo.name}>
         <li>{repo.name}</li>
         <li>{repo.owner.avatar_url}</li>
-        <li>{repo.language}</li>
-        <li>{repo.description}</li>
-        <li>{repo.created_at}</li>
-        <li>{repo.updated_at}</li>
-        <li>{repo.forks}</li>
+        <li>{`Language: ${repo.language}`}</li>
+        <li>{`Description:${repo.description}`}</li>
+        <li>{`Created:${repo.created_at}`}</li>
+        <li>{`Last updated:${repo.updated_at}`}</li>
+        <li>{`{Times forked: ${repo.forks}`}</li>
         
     </ul>
 ); 
