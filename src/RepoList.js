@@ -4,7 +4,7 @@ import './RepoList.css';
 const getRepo = (repo) => (
     <ul className="repoBorder" key={repo.name}>
         <li>{repo.name}</li>
-        <li>{repo.owner.avatar_url}</li>
+        <li><img src={repo.owner.avatar_url}/></li>
         <li>{`Language: ${repo.language}`}</li>
         <li>{`Description:${repo.description}`}</li>
         <li>{`Created:${repo.created_at}`}</li>
