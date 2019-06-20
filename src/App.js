@@ -9,6 +9,7 @@ class App extends Component {
     this.state = {
       loaded: false,
       repos: [],
+      gitUser: "reactjs",
       error: false
 
     };
