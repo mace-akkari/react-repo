@@ -9,7 +9,7 @@ const getRepo = (repo) => (
         <li>{`Description:${repo.description}`}</li>
         <li>{`Created:${repo.created_at}`}</li>
         <li>{`Last updated:${repo.updated_at}`}</li>
-        <li>{`{Times forked: ${repo.forks}`}</li>
+        <li>{`Times forked: ${repo.forks}`}</li>
         
     </ul>
 ); 
