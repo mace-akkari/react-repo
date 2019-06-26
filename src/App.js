@@ -47,7 +47,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1>GitHub Repo</h1>
-        <h2>{`You have chosen to view`}</h2> <span>{`${gitUser}'s repository:`}</span>
+        <h2>{`You have chosen to view`}</h2> <span>{`${gitUser}'s repositories:`}</span>
         {error ? <h2>ERROR HAS OCCURED</h2> : ""}
         {loaded && !error ? <RepoList repos={repos} /> : "Loading"}
       </div>
