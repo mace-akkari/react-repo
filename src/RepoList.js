@@ -3,9 +3,9 @@ import './RepoList.css';
 
 const getRepo = (repo) => (
     <li className="repoBorder" key={repo.name}>
-        <ul >
-            <li>{repo.name}</li>
-            <li><img src={repo.owner.avatar_url} /></li>
+        <ul className="repoList-info" >
+            <li className="repo-name">{repo.name}</li>
+            <li><img src={repo.owner.avatar_url} alt="react-logo" className="repo-img" /></li>
             <li>{`Language: ${repo.language}`}</li>
             <li>{`Description:${repo.description}`}</li>
             <li>{`Created:${repo.created_at}`}</li>

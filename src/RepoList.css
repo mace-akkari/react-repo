@@ -8,7 +8,26 @@
     margin: 5px;
     width: 60%;
     display: inline-block;
-    font-weight: bold;   
+    font-weight: bold; 
+}
+
+.repoList-info {
+    padding: 8px;
+}
+
+.repoList-info li {
+    list-style: none;
+    padding: 3px;
+}
+.repo-name { 
+    color: rgb(111, 196, 230);
+    font-size: 1.5em;
+    margin-bottom: 20px; 
+  }
+
+.repo-img {
+    max-width: 80%;
+    height:auto;
 }
 
 p {
