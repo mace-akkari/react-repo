@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import RepoList from './RepoList';
-import { getRepos } from './repolibrary';
+import { getRepos } from './repoLibrary';
 
 class App extends Component {
   constructor(props) {
